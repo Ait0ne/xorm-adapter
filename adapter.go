@@ -236,7 +236,7 @@ func (a *Adapter) open() error {
 	}
 
 	a.engine = engine
-
+	_, _ = a.engine.Exec("SET sql_require_primary_key=0;")
 	return a.createTable()
 }
 
